@@ -1,6 +1,5 @@
 ---
 import React, { Suspense } from "react"
-import Balancer from "react-wrap-balancer"
 import { Image } from 'astro:assets'
 import { Icon } from 'astro-icon'
 import { Separator } from "@/components/ui/separator"
@@ -22,21 +21,15 @@ export const prerender = true;
                     <p
                     class="animate-fade-up w-full text-stone-600 dark:text-gray-200 text-xl md:text-2xl lg:text-3xl xl:text-4xl 2xl:text-5xl mb-0"
                     style={{ animationDelay: "0.25s", animationFillMode: "forwards" }}
-                    >
-                    <Balancer>Hi, my name is</Balancer>
-                    </p>
+                    >Hi, my name is</p>
                     <h1
                     class="animate-fade-up w-full bg-gradient-to-br bg-clip-text font-display font-bold tracking-[-0.02em] text-stone-800  drop-shadow-sm dark:from-white dark:to-white dark:text-white text-4xl md:text-5xl md:leading-[5rem] lg:text-6xl xl:text-7xl 2xl:text-8xl mb-0"
                     style={{ animationDelay: "0.15s", animationFillMode: "forwards" }}
-                    >
-                    <Balancer>Justin Bachtell</Balancer>
-                    </h1>
+                    >Justin Bachtell</h1>
                     <p
                     class="animate-fade-up mt-2 w-full text-stone-600  dark:text-gray-200 text-xl md:text-2xl lg:text-3xl xl:text-4xl 2xl:text-5xl mb-0"
                     style={{ animationDelay: "0.25s", animationFillMode: "forwards" }}
-                    >
-                    <Balancer>I&apos;m a Full-Stack Developer</Balancer>
-                    </p>
+                    >I&apos;m a Full-Stack Developer</p>
                     <div class="flex flex-row lg:ml-0 lg:mr-auto my-8 items-center gap-4">
                         <a
                         href="https://twitter.com/justinjbachtell/"

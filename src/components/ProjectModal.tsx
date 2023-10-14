@@ -1,3 +1,4 @@
+import React from "react";
 import { Button, buttonVariants } from "@/components/ui/button";
 import {
   Dialog,
@@ -17,17 +18,24 @@ import {
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Separator } from "@/components/ui/separator";
 
-const ProjectModal = ({ params }) => {
-  const convertSvgToComponent = (svgString: string) => {
-    const Svg = () => (
-      <div
-        className="flex justify-center items-center h-max w-10"
-        dangerouslySetInnerHTML={{ __html: svgString }}
-      />
-    );
-    return <Svg />;
-  };
+interface SvgProps {
+    svgString: string;
+}
 
+const Svg: React.FC<SvgProps> = ({ svgString }) => {
+    return (
+        <div
+            className="flex justify-center items-center h-max w-10"
+            dangerouslySetInnerHTML={{ __html: svgString }}
+        />
+    );
+};
+
+const convertSvgToComponent = (svgString: string) => {
+    return <Svg svgString={svgString} />;
+};
+
+const ProjectModal = ({ params }) => {
   return (
     <Dialog>
       <DialogTrigger className="absolute h-full w-full hover:shadow-md hover:bg-black opacity-10 rounded-md duration-200 transition-all"></DialogTrigger>

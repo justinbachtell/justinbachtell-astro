@@ -57,7 +57,7 @@ const contactFormSchema = z.object({
   honeypot: z.string().max(0, { message: "Invalid form submission." }),
   submit: z.string().max(0, { message: "Invalid form submission." }),
 });
-
+// make react component
 const ContactForm = () => {
   const [responseMessage, setResponseMessage] = useState("");
   const formRef = React.createRef<HTMLFormElement>();
