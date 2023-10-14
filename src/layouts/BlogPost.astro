@@ -1,0 +1,78 @@
+---
+import "../styles/globals.css";
+import Header from "@/components/Header.astro";
+import Footer from "@/components/Footer.astro";
+import type { CollectionEntry } from "astro:content";
+import FormattedDate from "../components/FormattedDate.astro";
+import { Image } from "astro:assets";
+import { Separator } from "@/components/ui/separator";
+
+type Props = CollectionEntry<"blog">["data"];
+
+const { title, description, pubDate, updatedDate, heroImage, heroImageAlt } =
+  Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+    <script>
+      import { webVitals } from "../lib/vitals";
+
+      let analyticsId = import.meta.env.PUBLIC_VERCEL_ANALYTICS_ID;
+
+      if (analyticsId) {
+        webVitals({
+          path: location.pathname,
+          params: location.search,
+          analyticsId,
+        });
+      }
+    </script>
+  </head>
+  <body class="bg-white">
+    <Header />
+    <main class="relative lg:container w-full px-8 lg:px-2 mx-auto mt-16 mb-12">
+      <article class="w-full mx-auto">
+        <div class="w-full mx-auto">
+          {
+            heroImage && (
+              <Image
+                class="mx-auto"
+                width={1020}
+                height={510}
+                src={heroImage}
+                alt={heroImageAlt}
+              />
+            )
+          }
+        </div>
+        <Separator
+          className="flex justify-center mx-auto my-8 lg:my-12 w-2/3 lg:1/2 text-stone-300"
+        />
+        <div class="w-full mx-auto max-w-2xl">
+          <div class="w-full mx-auto">
+            <div class="w-full mx-auto text-center">
+              <FormattedDate date={pubDate} />
+              {
+                updatedDate && (
+                  <div class="w-full mx-auto">
+                    Last updated on <FormattedDate date={updatedDate} />
+                  </div>
+                )
+              }
+            </div>
+            <h1 class="text-center">{title}</h1>
+          </div>
+          <slot />
+        </div>
+      </article>
+    </main>
+    <Footer />
+  </body>
+</html>

@@ -1,17 +1,28 @@
-import { defineConfig } from 'astro/config';
-// Use Vercel Edge Functions (Recommended)
-import vercel from '@astrojs/vercel/edge';
-// Can also use Serverless Functions
-// import vercel from '@astrojs/vercel/serverless';
-// Or a completely static build
+import { defineConfig } from "astro/config";
+import react from "@astrojs/react";
+import tailwind from "@astrojs/tailwind";
+import mdx from "@astrojs/mdx";
+import sitemap from "@astrojs/sitemap";
+// Vercel Edge Functions
+// import vercel from "@astrojs/vercel/edge";
+// Serverless Functions
+import vercel from "@astrojs/vercel/serverless";
+// static build
 // import vercel from '@astrojs/vercel/static';
 
+// https://astro.build/config
 export default defineConfig({
-  output: 'server',
-  experimental: {
-    assets: true
-   },
+  site: "https://justinbachtell.com",
+  output: "hybrid",
   adapter: vercel({
-    imageService: true,
+    edgeMiddleware: true,
   }),
+  integrations: [
+    tailwind({
+      applyBaseStyles: false,
+    }),
+    mdx(),
+    sitemap(),
+    react(),
+  ],
 });

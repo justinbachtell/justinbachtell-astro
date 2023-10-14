@@ -1,0 +1,174 @@
+---
+import { Icon } from "astro-icon";
+const skillsList = [
+  {
+    name: "JavaScript",
+    href: "https://developer.mozilla.org/en-US/docs/Web/JavaScript",
+    icon: "javascript",
+  },
+  {
+    name: "TypeScript",
+    href: "https://www.typescriptlang.org/",
+    icon: "typescript",
+  },
+  {
+    name: "React.js",
+    href: "https://react.dev/",
+    icon: "react",
+  },
+  {
+    name: "Next.js",
+    href: "https://nextjs.org/",
+    icon: "nextjs",
+  },
+  {
+    name: "Python",
+    href: "https://www.python.org/",
+    icon: "python",
+  },
+  {
+    name: "jQuery",
+    href: "https://jquery.com/",
+    icon: "jquery",
+  },
+  {
+    name: "Tailwind",
+    href: "https://tailwindcss.com/",
+    icon: "tailwind",
+  },
+  {
+    name: "Bootstrap",
+    href: "https://getbootstrap.com/",
+    icon: "bootstrap",
+  },
+  {
+    name: "Node.js",
+    href: "https://nodejs.org/en/",
+    icon: "nodejs",
+  },
+  {
+    name: "Jira",
+    href: "https://www.atlassian.com/software/jira",
+    icon: "jira",
+  },
+  {
+    name: "Git",
+    href: "https://git-scm.com/",
+    icon: "git",
+  },
+  {
+    name: "GitHub",
+    href: "https://github.com/",
+    icon: "github",
+  },
+  {
+    name: "Bitbucket",
+    href: "https://bitbucket.org/",
+    icon: "bitbucket",
+  },
+  {
+    name: "WordPress",
+    href: "https://wordpress.org/",
+    icon: "wordpress",
+  },
+  {
+    name: "AWS",
+    href: "https://aws.amazon.com/",
+    icon: "aws",
+  },
+  {
+    name: "PHP",
+    href: "https://www.php.net/",
+    icon: "php",
+  },
+  {
+    name: "Grunt.js",
+    href: "https://gruntjs.com/",
+    icon: "grunt",
+  },
+  {
+    name: "HTML",
+    href: "https://developer.mozilla.org/en-US/docs/Web/HTML",
+    icon: "html",
+  },
+  {
+    name: "CSS",
+    href: "https://developer.mozilla.org/en-US/docs/Web/CSS",
+    icon: "css",
+  },
+  {
+    name: "Sass",
+    href: "https://sass-lang.com/",
+    icon: "sass",
+  },
+  {
+    name: "Less.js",
+    href: "https://lesscss.org/",
+    icon: "less",
+  },
+  {
+    name: "Java",
+    href: "https://www.java.com/en/",
+    icon: "java",
+  },
+  {
+    name: "VS Code",
+    href: "https://code.visualstudio.com/",
+    icon: "vscode",
+  },
+  {
+    name: "PostgreSQL",
+    href: "https://www.postgresql.org/",
+    icon: "postgresql",
+  },
+  {
+    name: "MySQL",
+    href: "https://www.mysql.com/",
+    icon: "mysql",
+  },
+  {
+    name: "Figma",
+    href: "https://www.figma.com/",
+    icon: "figma",
+  },
+  {
+    name: "Confluence",
+    href: "https://www.atlassian.com/software/confluence",
+    icon: "confluence",
+  },
+  {
+    name: "Elastic",
+    href: "https://www.elastic.co/",
+    icon: "elastic",
+  },
+  /* {
+      name: "NPM",
+      href: "https://www.npmjs.com/",
+      icon: "npm",
+    }, */
+  {
+    name: "Storybook",
+    href: "https://storybook.js.org/",
+    icon: "storybook",
+  },
+];
+
+export const prerender = true;
+---
+
+<ul class="flex flex-wrap md:container items-center justify-center gap-4">
+  {
+    skillsList.map((skill: any) => (
+      <li class="flex flex-col items-center justify-center rounded-md p-2 transition-all duration-200 odd:text-stone-800 even:text-stone-800 hover:text-stone-600">
+        <a
+          href={skill.href}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="relative flex h-16 w-16 lg:h-20 lg:w-20 flex-col items-center justify-center gap-2 text-base font-semibold no-underline">
+          <Icon class="w-10 h-10" name={skill.icon} />
+          <span>{skill.name}</span>
+        </a>
+      </li>
+    ))
+  }
+</ul>

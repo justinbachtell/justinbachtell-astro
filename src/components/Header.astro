@@ -1,0 +1,33 @@
+---
+import HeaderLink from "./HeaderLink.astro";
+import { Icon } from "astro-icon";
+
+export const prerender = true;
+---
+
+<header
+  class="fixed top-0 w-full justify-center px-8 py-0 z-30 transition-all border-b border-white bg-white/50 dark:bg-stone-800/50 backdrop-blur-sm dark:border-stone-400">
+  <nav class="flex flex-row items-center justify-between p-2">
+    <a
+      class="p-0 text-stone-800 dark:text-stone-white hover:text-stone-600 dark:hover:text-stone-300 h-8 w-8 md:h-10 md:w-10 lg:h-11 lg:w-11"
+      href="/"><Icon class="w-full h-full" name="jb-logo" /></a
+    >
+    <div class="flex flex-row gap-4 md:gap-6 lg:gap-8 no-underline">
+      <HeaderLink href="/">Home</HeaderLink>
+      <HeaderLink href="/about">About</HeaderLink>
+    </div>
+  </nav>
+</header>
+
+<script>
+  // Add event listener for scroll
+  window.addEventListener("scroll", function () {
+    const header = document.querySelector("header");
+
+    if (window.pageYOffset > 50) {
+      header?.classList.add("scolled"); // Add the class when scrolled down
+    } else {
+      header?.classList.remove("scrolled"); // Remove the class when not scrolled enough
+    }
+  });
+</script>

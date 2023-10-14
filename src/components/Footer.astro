@@ -1,0 +1,87 @@
+---
+import { cn } from "@/lib/utils";
+import { Icon } from "astro-icon";
+import { buttonVariants } from "@/components/ui/button";
+
+import ContactForm from "./ContactForm.tsx";
+
+const today = new Date();
+export const prerender = true;
+---
+
+<footer
+  aria-label="Footer"
+  class="relative mx-auto align-center justify-center block w-full border-t border-solid border-stone-300 px-4 py-12 text-base">
+  <div
+    class="mx-auto flex h-full w-full flex-col justify-center gap-4 text-center align-middle md:flex-row md:gap-0">
+    <div
+      class="flex w-full flex-wrap items-center justify-start gap-2 md:flex-nowrap md:px-4 md:text-left">
+      <div
+        class="m-auto flex flex-col flex-wrap-reverse items-center justify-center gap-2 md:m-0 md:flex-row md:gap-4">
+        <p class="text-stone-800 dark:text-white mb-0">
+          &copy; {today.getFullYear()}. Build by Justin Bachtell. All Rights
+          Reserved.
+        </p>
+      </div>
+      <div
+        class="flex w-full flex-row items-center justify-center gap-2 md:w-auto">
+        <span class="flex items-center">
+          <a
+            class="underline hover:no-underline text-stone-800 hover:text-stone-600 dark:text-white dark:hover:text-stone-300"
+            href="/privacy">Privacy</a
+          >
+          {". "}
+        </span>
+        <span class="flex items-center">
+          <a
+            class="underline hover:no-underline text-stone-800 hover:text-stone-600 dark:text-white dark:hover:text-stone-300"
+            href="/terms">Terms</a
+          >
+          {"."}
+        </span>
+      </div>
+    </div>
+    <div
+      class="mx-auto flex justify-center gap-4 px-4 md:justify-end md:py-0 md:text-right">
+      <a
+        href="https://twitter.com/justinjbachtell"
+        target="_blank"
+        rel="noopener noreferrer noopener"
+        class="hover:bg-primary-dark rounded-full duration-200">
+        <div
+          class={buttonVariants({
+            size: "icon",
+            variant: "link",
+            class:
+              "dark:text-white dark:underline dark:visited:text-white dark:visited:decoration-white",
+          })}>
+          <Icon
+            class="w-10 h-10 text-stone-800 hover:text-stone-600 dark:text-white dark:hover:text-stone-300"
+            name="x"
+          />
+          <span class="sr-only">X</span>
+        </div>
+      </a>
+      <a
+        href="https://github.com/justinbachtell"
+        target="_blank"
+        rel="noopener noreferrer noopener"
+        class="hover:bg-primary-dark rounded-full duration-200">
+        <div
+          class={buttonVariants({
+            size: "icon",
+            variant: "link",
+            class:
+              "dark:text-white dark:underline dark:visited:text-white dark:visited:decoration-white",
+          })}>
+          <Icon
+            class="w-8 h-8 text-stone-800 hover:text-stone-600 dark:text-white dark:hover:text-stone-300"
+            name="github"
+          />
+          <span class="sr-only">Github</span>
+        </div>
+      </a>
+      <ContactForm client:visible />
+    </div>
+  </div>
+</footer>

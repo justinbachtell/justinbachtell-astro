@@ -1,0 +1,281 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    :root {
+        --background: 0 0% 100%;
+        --foreground: 20 14.3% 4.1%;
+
+        --card: 0 0% 100%;
+        --card-foreground: 20 14.3% 4.1%;
+
+        --popover: 0 0% 100%;
+        --popover-foreground: 20 14.3% 4.1%;
+
+        --primary: 24 9.8% 10%;
+        --primary-foreground: 60 9.1% 97.8%;
+
+        --secondary: 60 4.8% 95.9%;
+        --secondary-foreground: 24 9.8% 10%;
+
+        --muted: 60 4.8% 95.9%;
+        --muted-foreground: 25 5.3% 44.7%;
+
+        --accent: 60 4.8% 95.9%;
+        --accent-foreground: 24 9.8% 10%;
+
+        --destructive: 0 84.2% 60.2%;
+        --destructive-foreground: 60 9.1% 97.8%;
+
+        --border: 20 5.9% 90%;
+        --input: 20 5.9% 90%;
+        --ring: 20 14.3% 4.1%;
+
+        --radius: 0.5rem;
+        
+        --novel-black: rgb(0 0 0);
+        --novel-white: rgb(255 255 255);
+        --novel-stone-50: rgb(250 250 249);
+        --novel-stone-100: rgb(245 245 244);
+        --novel-stone-200: rgb(231 229 228);
+        --novel-stone-300: rgb(214 211 209);
+        --novel-stone-400: rgb(168 162 158);
+        --novel-stone-500: rgb(120 113 108);
+        --novel-stone-600: rgb(87 83 78);
+        --novel-stone-700: rgb(68 64 60);
+        --novel-stone-800: rgb(41 37 36);
+        --novel-stone-900: rgb(28 25 23);
+        --novel-highlight-default: #ffffff;
+        --novel-highlight-purple: #f6f3f8;
+        --novel-highlight-red: #fdebeb;
+        --novel-highlight-yellow: #fbf4a2;
+        --novel-highlight-blue: #c1ecf9;
+        --novel-highlight-green: #acf79f;
+        --novel-highlight-orange: #faebdd;
+        --novel-highlight-pink: #faf1f5;
+        --novel-highlight-gray: #f1f1ef;
+    }
+
+    .dark-theme {
+        --novel-black: rgb(255 255 255);
+        --novel-white: rgb(25 25 25);
+        --novel-stone-50: rgb(35 35 34);
+        --novel-stone-100: rgb(41 37 36);
+        --novel-stone-200: rgb(66 69 71);
+        --novel-stone-300: rgb(112 118 123);
+        --novel-stone-400: rgb(160 167 173);
+        --novel-stone-500: rgb(193 199 204);
+        --novel-stone-600: rgb(212 217 221);
+        --novel-stone-700: rgb(229 232 235);
+        --novel-stone-800: rgb(232 234 235);
+        --novel-stone-900: rgb(240, 240, 241);
+        --novel-highlight-default: #000000;
+        --novel-highlight-purple: #3f2c4b;
+        --novel-highlight-red: #5c1a1a;
+        --novel-highlight-yellow: #5c4b1a;
+        --novel-highlight-blue: #1a3d5c;
+        --novel-highlight-green: #1a5c20;
+        --novel-highlight-orange: #5c3a1a;
+        --novel-highlight-pink: #5c1a3a;
+        --novel-highlight-gray: #3a3a3a;
+    }
+
+    body {
+        background-color: var(--novel-white);
+    }
+
+    .dark {
+        --background: 20 14.3% 4.1%;
+        --foreground: 60 9.1% 97.8%;
+
+        --card: 20 14.3% 4.1%;
+        --card-foreground: 60 9.1% 97.8%;
+
+        --popover: 20 14.3% 4.1%;
+        --popover-foreground: 60 9.1% 97.8%;
+
+        --primary: 60 9.1% 97.8%;
+        --primary-foreground: 24 9.8% 10%;
+
+        --secondary: 12 6.5% 15.1%;
+        --secondary-foreground: 60 9.1% 97.8%;
+
+        --muted: 12 6.5% 15.1%;
+        --muted-foreground: 24 5.4% 63.9%;
+
+        --accent: 12 6.5% 15.1%;
+        --accent-foreground: 60 9.1% 97.8%;
+
+        --destructive: 0 62.8% 30.6%;
+        --destructive-foreground: 60 9.1% 97.8%;
+
+        --border: 12 6.5% 15.1%;
+        --input: 12 6.5% 15.1%;
+        --ring: 24 5.7% 82.9%;
+
+        --novel-black: rgb(255 255 255);
+        --novel-white: rgb(25 25 25);
+        --novel-stone-50: rgb(35 35 34);
+        --novel-stone-100: rgb(41 37 36);
+        --novel-stone-200: rgb(66 69 71);
+        --novel-stone-300: rgb(112 118 123);
+        --novel-stone-400: rgb(160 167 173);
+        --novel-stone-500: rgb(193 199 204);
+        --novel-stone-600: rgb(212 217 221);
+        --novel-stone-700: rgb(229 232 235);
+        --novel-stone-800: rgb(232 234 235);
+        --novel-stone-900: rgb(240, 240, 241);
+        --novel-highlight-default: #000000;
+        --novel-highlight-purple: #3f2c4b;
+        --novel-highlight-red: #5c1a1a;
+        --novel-highlight-yellow: #5c4b1a;
+        --novel-highlight-blue: #1a3d5c;
+        --novel-highlight-green: #1a5c20;
+        --novel-highlight-orange: #5c3a1a;
+        --novel-highlight-pink: #5c1a3a;
+        --novel-highlight-gray: #3a3a3a;
+    }
+}
+
+@layer base {
+    * {
+        @apply border-border;
+    }
+    body {
+        @apply bg-background text-foreground;
+    }
+}
+
+@font-face {
+    font-family: "Atkinson";
+    src: url("/fonts/atkinson-regular.woff") format("woff");
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: "Atkinson";
+    src: url("/fonts/atkinson-bold.woff") format("woff");
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+body {
+    font-family: "Atkinson", sans-serif;
+    margin: 0;
+    padding: 0;
+    text-align: left;
+    background: linear-gradient(var(--gray-gradient)) no-repeat;
+    background-size: 100% 600px;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    color: rgb(var(--gray-dark));
+    font-size: 20px;
+    line-height: 1.7;
+}
+main {
+    margin: 0;
+    padding: 0;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin: 0 0 0.5rem 0;
+    color: rgb(var(--black));
+    line-height: 1.2;
+}
+h1 {
+    font-size: 3.052em;
+}
+h2 {
+    font-size: 2.441em;
+}
+h3 {
+    font-size: 1.953em;
+}
+h4 {
+    font-size: 1.563em;
+}
+h5 {
+    font-size: 1.25em;
+}
+strong,
+b {
+    font-weight: 700;
+}
+a {
+    color: var(--accent);
+}
+a:hover {
+    color: var(--accent);
+}
+p {
+    margin-bottom: 1em;
+}
+.prose p {
+    margin-bottom: 2em;
+}
+textarea {
+    width: 100%;
+    font-size: 16px;
+}
+input {
+    font-size: 16px;
+}
+table {
+    width: 100%;
+}
+img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+code {
+    padding: 2px 5px;
+    background-color: rgb(var(--gray-light));
+    border-radius: 2px;
+}
+pre {
+    padding: 1.5em;
+    border-radius: 8px;
+}
+pre > code {
+    all: unset;
+}
+blockquote {
+    border-left: 4px solid var(--accent);
+    padding: 0 0 0 20px;
+    margin: 0px;
+    font-size: 1.333em;
+}
+hr {
+    border: none;
+    border-top: 1px solid rgb(var(--gray-light));
+}
+@media (max-width: 720px) {
+    body {
+        font-size: 18px;
+    }
+}
+
+.sr-only {
+    border: 0;
+    padding: 0;
+    margin: 0;
+    position: absolute !important;
+    height: 1px;
+    width: 1px;
+    overflow: hidden;
+    /* IE6, IE7 - a 0 height clip, off to the bottom right of the visible 1px box */
+    clip: rect(1px 1px 1px 1px);
+    /* maybe deprecated but we need to support legacy browsers */
+    clip: rect(1px, 1px, 1px, 1px);
+    /* modern browsers, clip-path works inwards from each corner */
+    clip-path: inset(50%);
+    /* added line to stop words getting smushed together (as they go onto seperate lines and some screen readers do not understand line feeds as a space */
+    white-space: nowrap;
+}

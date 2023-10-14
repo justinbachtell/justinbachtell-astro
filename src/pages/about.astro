@@ -1,0 +1,89 @@
+---
+import React, { Suspense } from "react";
+import BlogPost from "../layouts/BlogPost.astro";
+import { Image } from "astro:assets";
+
+import thumbnail from "../assets/images/about/alycia-justin.png";
+import cats from "../assets/images/about/elc.jpg";
+import lawEnforcement from "../assets/images/about/justin-law-enforcement.jpg";
+import justinAlycia from "../assets/images/about/alycia-justin-2.jpeg";
+
+export const prerender = true;
+---
+
+<BlogPost
+  title="About Me"
+  description="About Justin Bachtell"
+  pubDate={new Date("October 14, 2023")}
+  heroImage={thumbnail}
+  heroImageAlt="Alycia and Justin Bachtell">
+  <p class="text-base text-stone-800 dark:text-white">
+    Hello there! Welcome to my developer haven—a place where code meets purpose and where pixels transform into meaningful solutions. My name is Justin Bachtell, and I'm a Software Developer. This site serves as a portal to showcase my portfolio, update you on projects I'm passionately working on, and offer an easy way to get in touch with me.
+  </p>
+
+  <h2 class="text-2xl text-stone-800 dark:text-white bold mt-8 mb-4">
+    My Background & Skills
+  </h2>
+
+  <p class="text-base text-stone-800 dark:text-white">
+    I am a proud Wisconsinite, living in the southeastern part of the state with my beautiful wife, Alycia, and our three adorable cats, Emmy, plus her two sons, Calvin and Leo.
+  </p>
+
+  <Suspense>
+    <Image
+      src={cats}
+      alt="Emmy, and her two sons, Calvin and Leo"
+      class="rounded-md border border-stone-800 dark:border-white justify-center mx-auto my-8"
+      width={726}
+      height={484}
+    />
+  </Suspense>
+
+  <p class="text-base text-stone-800 dark:text-white">
+    In terms of education, I'm currently a Master's student in Cyber Security at Liberty University. Professionally, I've had the privilege of wearing multiple hats, but they all fit under one common theme: problem-solving.
+  </p>
+
+  <p class="text-base text-stone-800 dark:text-white">
+    At Liberty University, my role as a Software Developer involves a range of responsibilities. From leading the development of a new React-based WordPress Gutenberg theme to optimizing database queries for faster page loading—everyday is a learning journey. The Agile methodology powers my workflow, and my skillset includes JavaScript, TypeScript, Python, and different React.js libraries. Before diving into the tech world, I served as a Deputy Sheriff in southeastern Wisconsin. As a Deputy Sheriff, I had a unique role as an internationally certified Drug Recognition Expert (DRE), and recognized as one of the top-10 DREs in Wisconsin. This experience not only instilled in me a strong sense of community service and duty but also provided a unique perspective that I bring into my current role.
+  </p>
+
+  <Suspense>
+    <Image
+      src={lawEnforcement}
+      alt="Emmy, and her two sons, Calvin and Leo"
+      class="rounded-md border border-stone-800 dark:border-white justify-center mx-auto my-8"
+      width={456}
+      height={608}
+    />
+  </Suspense>
+
+  <h2 class="text-2xl text-stone-800 dark:text-white bold mt-8 mb-4">
+    What Sets Me Apart
+  </h2>
+
+  <p class="text-base text-stone-800 dark:text-white">
+    You might find it unusual, but my earlier career in law enforcement deeply influences my present work in tech. One example is by striving to find ways to contribute to criminal justice and to bring aid to victims across the nation. In the era of modern technology, the need for advanced tools to track down offenders and protect innocent victims is imperative. This is where I wish to make my mark. My ambition lies in merging my tech skills with my law enforcement background to develop solutions that can really make a difference in the criminal justice and public safety system.
+  </p>
+
+  <h2 class="text-2xl text-stone-800 dark:text-white bold mt-8 mb-4">
+    My Mission
+  </h2>
+
+  <p class="text-base text-stone-800 dark:text-white">
+    So, what's the endgame? It's about making an impactful difference. Whether it's automating a laborious task, refining an application for enhanced user experience, or contributing to a cause that's bigger than myself—I find fulfillment in creating change. When I'm not coding or brainstorming new ideas, you'll find me reading, working out, woodworking, or adventuring on hikes or biking trails with my wife.
+  </p>
+
+  <p class="text-base text-stone-800 dark:text-white">
+    Feel free to browse through my portfolio, read up on my latest projects, or send me a message. I'm glad you're here, and I can't wait to share my journey with you.
+  </p>
+
+  <Suspense>
+    <Image
+      src={justinAlycia}
+      alt="Justin Bachtell"
+      class="rounded-md border border-stone-800 dark:border-white justify-center mx-auto mt-8"
+      width={750}
+      height={500}
+    />
+  </Suspense>
+</BlogPost>
