@@ -1,6 +1,8 @@
 import type { APIRoute } from "astro";
 import { Resend } from "resend";
 
+export const prerender = false;
+
 // define the api route handler
 export const POST: APIRoute = async ({ request }) => {
   const resend = new Resend(import.meta.env.RESEND_CONTACT_KEY);

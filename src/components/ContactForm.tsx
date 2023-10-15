@@ -28,6 +28,8 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm, useController } from "react-hook-form";
 import * as z from "zod";
 
+export const prerender = false;
+
 import messageCircle from "../icons/message-circle.svg";
 
 const messageRegex = /^[a-zA-Z0-9\s.,!?'"();/-]+$/;
