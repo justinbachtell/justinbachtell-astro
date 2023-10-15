@@ -13,9 +13,15 @@ import vercel from "@astrojs/vercel/serverless";
 // https://astro.build/config
 export default defineConfig({
   site: "https://justinbachtell.com",
-  output: "hybrid",
+  output: "server",
   adapter: vercel({
     edgeMiddleware: true,
+    webAnalytics: {
+        enabled: true,
+    },
+    speedInsights: {
+        enabled: true,
+    },
   }),
   integrations: [
     tailwind({

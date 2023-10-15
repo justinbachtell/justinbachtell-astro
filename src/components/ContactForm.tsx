@@ -135,7 +135,7 @@ const ContactForm = () => {
           <form
             ref={formRef}
             noValidate
-            method="dialog"
+            method="POST"
             name="contact_form"
             onSubmit={form.handleSubmit(onSubmit)}
             className="mx-auto flex max-h-screen w-full max-w-2xl flex-col items-center justify-start mb-4">
