@@ -6,9 +6,9 @@ import { Image } from "astro:assets";
 import thumbnail from "../assets/images/about/alycia-justin.png";
 import cats from "../assets/images/about/elc.jpg";
 import lawEnforcement from "../assets/images/about/justin-law-enforcement.jpg";
-import justinAlycia from "../assets/images/about/alycia-justin-2.jpeg";
+import justinAndAlycia from "../assets/images/about/alycia-justin-2.jpeg";
 
-export const prerender = true;
+export const prerender = true
 ---
 
 <BlogPost
@@ -36,6 +36,7 @@ export const prerender = true;
       class="rounded-md border border-stone-800 dark:border-white justify-center mx-auto my-8"
       width={726}
       height={484}
+      densities={[1, 1.5, 2]}
     />
   </Suspense>
 
@@ -54,6 +55,7 @@ export const prerender = true;
       class="rounded-md border border-stone-800 dark:border-white justify-center mx-auto my-8"
       width={456}
       height={608}
+      densities={[1, 1.5, 2]}
     />
   </Suspense>
 
@@ -79,11 +81,12 @@ export const prerender = true;
 
   <Suspense>
     <Image
-      src={justinAlycia}
+      src={justinAndAlycia}
       alt="Justin Bachtell"
       class="rounded-md border border-stone-800 dark:border-white justify-center mx-auto mt-8"
       width={750}
       height={500}
+      densities={[1, 1.5, 2]}
     />
   </Suspense>
 </BlogPost>

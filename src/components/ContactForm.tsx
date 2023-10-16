@@ -28,6 +28,8 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm, useController } from "react-hook-form";
 import * as z from "zod";
 
+export const prerender = false;
+
 import messageCircle from "../icons/message-circle.svg";
 
 const messageRegex = /^[a-zA-Z0-9\s.,!?'"();/-]+$/;
@@ -135,7 +137,7 @@ const ContactForm = () => {
           <form
             ref={formRef}
             noValidate
-            method="dialog"
+            method="POST"
             name="contact_form"
             onSubmit={form.handleSubmit(onSubmit)}
             className="mx-auto flex max-h-screen w-full max-w-2xl flex-col items-center justify-start mb-4">

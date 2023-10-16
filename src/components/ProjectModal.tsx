@@ -21,17 +21,19 @@ const ProjectModal = ({ params }) => {
   const convertSvgToComponent = (svgString: string) => {
     const Svg = () => (
       <div
-        className="flex justify-center items-center h-10 w-10 [&>svg]:w-10 [&>svg]:h-10"
+        className="flex justify-center items-center h-10 w-10 [&>svg]:w-full [&>svg]:h-full"
         dangerouslySetInnerHTML={{ __html: svgString }}
       />
     );
     return <Svg />;
   };
 
+  // const closeButton = 
+
   return (
     <Dialog>
       <DialogTrigger className="absolute h-full w-full hover:shadow-md hover:bg-black opacity-10 rounded-md duration-200 transition-all"></DialogTrigger>
-      <DialogContent className="overflow-y-scroll max-h-screen">
+      <DialogContent className="overflow-y-auto max-h-screen h-full py-14 [&>button]:fixed [&>button]:w-8 [&>button]:h-8 [&>button]:top-6 [&>button>svg]:w-full [&>button>svg]:h-full">
         <DialogHeader className="flex mx-auto justify-center">
           <DialogTitle className="text-stone-800 text-xl md:text-2xl lg:text-3xl mb-0 justify-center mx-auto">
             {params.title}
@@ -157,7 +159,7 @@ const ProjectModal = ({ params }) => {
                       size: "icon",
                       variant: "ghost",
                       class:
-                        "dark:text-white dark:underline dark:visited:text-white dark:visited:decoration-white",
+                        "dark:text-white dark:underline dark:visited:text-white dark:visited:decoration-white h-8 w-8",
                     })}>
                     {item?.icon !== undefined
                       ? convertSvgToComponent(item?.icon)

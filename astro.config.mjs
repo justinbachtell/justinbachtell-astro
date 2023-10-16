@@ -16,6 +16,12 @@ export default defineConfig({
   output: "hybrid",
   adapter: vercel({
     edgeMiddleware: true,
+    webAnalytics: {
+        enabled: true,
+    },
+    speedInsights: {
+        enabled: true,
+    },
   }),
   integrations: [
     tailwind({
