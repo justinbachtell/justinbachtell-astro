@@ -123,7 +123,7 @@ const ContactForm = () => {
           <path d="M3 21l1.9-5.7a8.5 8.5 0 113.8 3.8z"></path>
         </svg>
       </DialogTrigger>
-      <DialogContent className="overflow-y-scroll max-h-screen gap-2">
+      <DialogContent className="overflow-y-scroll max-h-screen gap-2 [&>button]:fixed [&>button]:w-8 [&>button]:h-8 [&>button>svg]:w-full [&>button>svg]:h-full">
         <DialogHeader>
           <DialogTitle className="text-left text-stone-800 text-xl md:text-2xl lg:text-3xl">
             Let&apos;s connect!
