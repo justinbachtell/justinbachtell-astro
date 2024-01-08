@@ -1,5 +1,6 @@
 ---
 import { Icon } from "astro-icon";
+import { manifest } from "astro:ssr-manifest";
 const skillsList = [
   {
     name: "JavaScript",
@@ -25,6 +26,26 @@ const skillsList = [
     name: "Python",
     href: "https://www.python.org/",
     icon: "python",
+  },
+  {
+    name: "Linux",
+    href: "https://www.linux.org/",
+    icon: "linux",
+  },
+  {
+    name: "Ubuntu",
+    href: "https://ubuntu.com/",
+    icon: "ubuntu",
+  },
+  {
+    name: "Kali",
+    href: "https://www.kali.org/",
+    icon: "kali",
+  },
+  {
+    name: "Parallels",
+    href: "https://www.parallels.com/",
+    icon: "parallels",
   },
   {
     name: "jQuery",
@@ -107,9 +128,44 @@ const skillsList = [
     icon: "less",
   },
   {
+    name: "Markdown",
+    href: "https://www.markdownguide.org/",
+    icon: "markdown",
+  },
+  {
+    name: "Eslint",
+    href: "https://eslint.org/",
+    icon: "eslint",
+  },
+  {
     name: "Java",
     href: "https://www.java.com/en/",
     icon: "java",
+  },
+  {
+    name: "IntelliJ",
+    href: "https://www.jetbrains.com/idea/",
+    icon: "intellij",
+  },
+  {
+    name: "Pycharm",
+    href: "https://www.jetbrains.com/pycharm/",
+    icon: "pycharm",
+  },
+  {
+    name: "Webstorm",
+    href: "https://www.jetbrains.com/webstorm/",
+    icon: "webstorm",
+  },
+  {
+    name: "PhpStorm",
+    href: "https://www.jetbrains.com/phpstorm/",
+    icon: "phpstorm",
+  },
+  {
+    name: "Jetbrains",
+    href: "https://www.jetbrains.com/",
+    icon: "jetbrains",
   },
   {
     name: "VS Code",
